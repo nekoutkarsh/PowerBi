@@ -9,13 +9,16 @@ never ending. We are going to create a dashboard visualization making it easier 
 
 ### Steps followed 
 
-- Step 1 : Load data into Power BI Desktop, dataset is a csv file.
-- Step 2 : Open power query editor & in view tab under Data preview section, check "column distribution", "column quality" & "column profile" options.
-- Step 3 : Also since by default, profile will be opened only for 1000 rows so you need to select "column profiling based on entire dataset".
-- Step 4 : It was observed that in none of the columns errors & empty values were present except column named "Arrival Delay".
-- Step 5 : For calculating average delay time, null values were not taken into account as only less than 1% values are null in this column(i.e column named "Arrival Delay") 
-- Step 6 : In the report view, under the view tab, theme was selected.
-- Step 7 : Since the data contains various ratings, thus in order to represent ratings, a new visual was added using the three ellipses in the visualizations pane in report view. 
-- Step 8 : Visual filters (Slicers) were added for four fields named "Class", "Customer Type", "Gate Location" & "Type of travel".
-- Step 9 : Two card visuals were added to the canvas, one representing average departure delay in minutes & other representing average arrival delay in minutes.
-           Using visual level filter from the filters pane, basic filtering was used & null values were unselected for consideration into average calculation.
+- Step 1 : Load data into Power BI Desktop, dataset is a MySQL file.
+- Step 2 : Created data model with star schema.
+- Step 3 : Launching power query editor to perform data cleaning. Filtering out blank entries in zone in markets table.
+- Step 4 : Filter '0' and negative values from sales amount column in sales transactions table.
+- Step 5 : Added new conditional coulumn to convert USD to INR by editing DAX formula.
+- Step 6 : Filtering out some duplicate entries found for currency INR and USD.
+- Step 7 : Close and apply all these transformations.
+- Step 8 : Create table named 'Base measure'. Create new measure under that table to bring out 'revenue' and 'sales qty'.
+- Step 9 : Create single card for both revenue and sales qty.
+- Step 10: Create bar chart to show revenue against zone/region and sales qty against region/zone.
+- Step 11: Adding a slicer for year to track revenue by year. Also adding slicer for every month in each year. Changing 'cy date' format for the slicer to 'mmm yy'.
+- Step 12: Plotted top 5 customers by revenue and top 5 products by revenue
+- Step 13: Line chart plotted for revenue trend over the years.
